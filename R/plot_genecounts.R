@@ -110,7 +110,7 @@ mat2.ss3xpress.ds <- loom2matrix_new("data/SS3xpress_HEK_sc_UMIcount_Downsampled
 sce.ss3xpress.all <- SingleCellExperiment(assays = list(counts = mat.ss3xpress.all, umi = mat2.ss3xpress.all), colData=meta.ss3xpress[match(colnames(mat.ss3xpress.all), sample_barcode)])
 sce.ss3xpress.ds <- SingleCellExperiment(assays = list(counts = mat.ss3xpress.ds, umi = mat2.ss3xpress.ds), colData=meta.ss3xpress[match(colnames(mat.ss3xpress.ds), sample_barcode)])
 
-stats.ss3xpress.ds <- fread("SS3xpress/downsampled_stats.txt")
+stats.ss3xpress.ds <- fread("data/SS3xpress_downsampled_stats.txt")
 
 ggplot(data.table(y=colSums(assay(sce.ss3xpress.all)>0), x= factor(sce.ss3xpress.all$inhibitor_concentration, levels=c(0, 0.06, 0.15, 0.3, 0.6, 1.5, 3, "RRI")), day=sce.ss3xpress.all$day, temp=sce.ss3xpress.all$temperature)[day == "day0"], aes(x=x,y=y)) + geom_boxplot() + expand_limits(y=0) + labs(y="Genes", x=NULL) + theme_cowplot() + theme(axis.text.x = element_text(angle=90, hjust=1, vjust=0.5), strip.background = element_blank())
 ggplot(data.table(y=colSums(assay(sce.ss3xpress.all, "umi")), x= factor(sce.ss3xpress.all$inhibitor_concentration, levels=c(0, 0.06, 0.15, 0.3, 0.6, 1.5, 3, "RRI")), day=sce.ss3xpress.all$day, temp=sce.ss3xpress.all$temperature)[day == "day0"], aes(x=x,y=y)) + geom_boxplot() + expand_limits(y=0) + labs(y="Genes", x=NULL) + theme_cowplot() + theme(axis.text.x = element_text(angle=90, hjust=1, vjust=0.5), strip.background = element_blank())
