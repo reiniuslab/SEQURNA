@@ -1,4 +1,3 @@
-library(facetscales)
 library(data.table)
 library(dplyr)
 library(cowplot)
