@@ -10,6 +10,8 @@ Single-cell RNA-sequencing (scRNAseq) is revolutionizing biomedicine, propelled 
 
 [Pre-print](https://doi.org/10.1101/2024.02.06.579116)
 
+[scRNA-seq data](https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-13873), [Bulk RNA-seq data](https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-13899)
+
 ##
 
 This repository contains code used to produce all data and figures.
